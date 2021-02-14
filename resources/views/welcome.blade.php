@@ -20,6 +20,7 @@
             }
         </style>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
         @livewireStyles
     </head>
     <body class="antialiased">
@@ -112,7 +113,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            let COMPONENT = null;
+        </script>
+
         @livewireScripts
+
         <script src="{{ mix('js/app.js') }}"></script>
+
     </body>
 </html>

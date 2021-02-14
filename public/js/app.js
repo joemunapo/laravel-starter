@@ -16,6 +16,7 @@ Object.defineProperty(exports, "__esModule", ({
 exports.helloWorld = void 0;
 
 function helloWorld() {
+  console.log(COMPONENT);
   return "Hello world!";
 }
 
@@ -29,15 +30,18 @@ exports.helloWorld = helloWorld;
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./dom.check */ "./resources/js/dom.check.js");
+__webpack_require__(/*! ./dom.check */ "./resources/js/dom.check.js"); //Show loader
 
-var helloWorld = __webpack_require__(/*! ./ts/hello-world */ "./resources/js/ts/hello-world.ts").helloWorld();
 
-console.log(helloWorld);
-window.Livewire.emit('helloWorld', helloWorld);
-window.Livewire.on('yay', function (yay) {
-  return console.log(yay);
-});
+(function () {
+  var helloWorld = __webpack_require__(/*! ./ts/hello-world */ "./resources/js/ts/hello-world.ts").helloWorld();
+
+  console.log(helloWorld);
+  window.Livewire.emit('helloWorld', helloWorld);
+  window.Livewire.on('yay', function (yay) {
+    return console.log(yay);
+  });
+})();
 
 /***/ }),
 
